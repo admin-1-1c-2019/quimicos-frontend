@@ -34,6 +34,9 @@ export class SignupPage {
   }
 
   doSignup() {
+
+    //Request to Backend signup endpoint
+
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
@@ -50,4 +53,5 @@ export class SignupPage {
       toast.present();
     });
   }
+
 }

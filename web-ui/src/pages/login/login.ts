@@ -31,6 +31,9 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
+
+    //Request to Backend login endpoint
+
     this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
@@ -38,4 +41,7 @@ export class LoginPage {
     });
   }
 
+  forgotPasswordRequest() {
+    //Request to Backend password recovery endpoint
+  }
 }
