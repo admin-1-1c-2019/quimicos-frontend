@@ -4,4 +4,11 @@ page-login {
     color: red;
   }
 
+  .blue-link {
+    color: blue;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
 }
