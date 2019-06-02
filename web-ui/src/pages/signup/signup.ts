@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import { Api } from '../../providers';
-import { User } from '../../providers';
+import { Api, User } from '../../providers';
 
 @IonicPage()
 @Component({
@@ -12,10 +11,10 @@ import { User } from '../../providers';
 export class SignupPage {
 
   account: { name: string, last_name: string, email: string, password: string } = {
-    name: 'Admin',
-    last_name: 'Proyectos',
-    email: 'tpproyectos1@gmail.com',
-    password: 'TPAdmin2019!'
+    name: '',
+    last_name: '',
+    email: '',
+    password: ''
   };
 
   // Our translated text strings
