@@ -38,7 +38,7 @@ export class PasswordRecoveryPage {
       "password": this.account.new_password,
     };
 
-    Api.prototype.put("/users/recover_password", postData, headers)
+    Api.prototype.put("users/recover_password", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
         //TODO: push home page
