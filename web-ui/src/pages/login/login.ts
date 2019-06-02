@@ -40,7 +40,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users/login", postData, headers)
+    Api.prototype.post("/users/login", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
         //TODO: push home page
@@ -61,7 +61,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users/recover_password", postData, headers)
+    Api.prototype.post("/users/recover_password", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
       }, error => {

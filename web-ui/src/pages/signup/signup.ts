@@ -43,7 +43,7 @@ export class SignupPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users", postData, headers)
+    Api.prototype.post("/users", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
         //TODO: push home page
