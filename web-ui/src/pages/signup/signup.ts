@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { Api } from '../../providers/api/api';
 
 import { User } from '../../providers';
-import { MainPage } from '../';
 
 @IonicPage()
 @Component({
@@ -14,10 +14,11 @@ export class SignupPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { name: string, email: string, password: string } = {
-    name: 'Test Human',
-    email: 'test@example.com',
-    password: 'test'
+  account: { name: string, last_name: string, email: string, password: string } = {
+    name: '',
+    last_name: '',
+    email: '',
+    password: ''
   };
 
   // Our translated text strings
@@ -35,9 +36,27 @@ export class SignupPage {
 
   doSignup() {
 
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
+
+    let postData = {
+      "name": this.account.name,
+      "last_name": this.account.last_name,
+      "email": this.account.email,
+      "password": this.account.password
+    };
+
     //Request to Backend signup endpoint
 
-    // Attempt to login in through our User service
+    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users", postData, headers)
+      .subscribe(data => {
+        console.log(data['_body']);
+      }, error => {
+        console.log(error);
+      });
+
+    /* Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
@@ -51,7 +70,7 @@ export class SignupPage {
         position: 'top'
       });
       toast.present();
-    });
+    });*/
   }
 
 }

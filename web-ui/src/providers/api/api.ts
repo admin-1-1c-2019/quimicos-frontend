@@ -44,4 +44,5 @@ export class Api {
   patch(endpoint: string, body: any, reqOpts?: any) {
     return this.http.patch(this.url + '/' + endpoint, body, reqOpts);
   }
+
 }
