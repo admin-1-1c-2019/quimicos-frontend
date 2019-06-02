@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
-import { User } from '../../providers';
-import { MainPage } from '../';
+import {Api, User} from '../../providers';
 
 @IonicPage()
 @Component({
@@ -15,8 +14,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+    email: 'tpproyectos1@gmail.com',
+    password: 'TPAdmin2019!'
   };
 
   constructor(public navCtrl: NavController,
@@ -32,16 +31,41 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
 
-    //Request to Backend login endpoint
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
 
-    this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
-    }, (err) => {
-      document.querySelector(".login-error-message").removeAttribute("hidden");
-    });
+    let postData = {
+      "email": this.account.email,
+      "password": this.account.password
+    };
+
+    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users/login", postData, headers)
+      .subscribe(data => {
+        console.log(data['_body']);
+        //TODO: push home page
+      }, error => {
+        console.log(error);
+        document.querySelector(".login-error-message").removeAttribute("hidden");
+      });
+
   }
 
   forgotPasswordRequest() {
-    //Request to Backend password recovery endpoint
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
+
+    let postData = {
+      "email": this.account.email,
+      "password": this.account.password
+    };
+
+    Api.prototype.post("https://admin-1c-2019.herokuapp.com/users/recover_password", postData, headers)
+      .subscribe(data => {
+        console.log(data['_body']);
+      }, error => {
+        console.log(error);
+      });
   }
 }
