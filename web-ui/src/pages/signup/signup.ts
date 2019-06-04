@@ -47,7 +47,7 @@ export class SignupPage {
     this.api.post("users", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
-        //TODO: push home page
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
       });

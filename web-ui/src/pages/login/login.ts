@@ -44,7 +44,7 @@ export class LoginPage {
     this.api.post("users/login", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
-        //TODO: push home page
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
         document.querySelector(".login-error-message").removeAttribute("hidden");
