@@ -22,6 +22,7 @@ export class SignupPage {
 
   constructor(public navCtrl: NavController,
     public user: User,
+    public api: Api,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
@@ -43,7 +44,7 @@ export class SignupPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("users", postData, headers)
+    this.api.post("users", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
         //TODO: push home page

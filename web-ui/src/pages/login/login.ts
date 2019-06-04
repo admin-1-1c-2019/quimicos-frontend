@@ -20,6 +20,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController,
     public user: User,
+    public api: Api,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
@@ -40,7 +41,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("users/login", postData, headers)
+    this.api.post("users/login", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
         //TODO: push home page
@@ -61,7 +62,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    Api.prototype.post("users/recover_password", postData, headers)
+    this.api.post("users/recover_password", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
       }, error => {

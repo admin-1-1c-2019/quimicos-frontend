@@ -20,6 +20,7 @@ export class PasswordRecoveryPage {
 
   constructor(public navCtrl: NavController,
               public user: User,
+              public api: Api,
               public toastCtrl: ToastController,
               public translateService: TranslateService) {
 
@@ -38,10 +39,10 @@ export class PasswordRecoveryPage {
       "password": this.account.new_password,
     };
 
-    Api.prototype.put("users/recover_password", postData, headers)
+    this.api.put("users/recover_password", postData, headers)
       .subscribe(data => {
         console.log(data['_body']);
-        //TODO: push home page
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
       });
