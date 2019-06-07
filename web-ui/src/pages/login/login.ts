@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import {Api, User} from '../../providers';
+import {HttpHeaders} from "@angular/common/http";
 
 @IonicPage()
 @Component({
@@ -32,7 +33,7 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
 
-    var headers = new Headers();
+    var headers = new HttpHeaders();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
 
@@ -41,7 +42,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    this.api.post("users/login", postData, headers)
+    this.api.post("users/login", postData, {headers: headers})
       .subscribe(data => {
         console.log(data['_body']);
         this.navCtrl.push('MenuPage');
@@ -53,7 +54,7 @@ export class LoginPage {
   }
 
   forgotPasswordRequest() {
-    var headers = new Headers();
+    var headers = new HttpHeaders();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
 
@@ -62,7 +63,7 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    this.api.post("users/recover_password", postData, headers)
+    this.api.post("users/recover_password", postData, {headers: headers})
       .subscribe(data => {
         console.log(data['_body']);
       }, error => {

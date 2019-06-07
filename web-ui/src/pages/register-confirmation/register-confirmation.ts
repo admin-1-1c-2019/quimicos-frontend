@@ -6,16 +6,14 @@ import {HttpHeaders} from "@angular/common/http";
 
 @IonicPage()
 @Component({
-  selector: 'page-password-recovery',
-  templateUrl: 'password-recovery.html'
+  selector: 'page-register-confirmation',
+  templateUrl: 'register-confirmation.html'
 })
-export class PasswordRecoveryPage {
+export class RegisterConfirmationPage {
 
-  account: { new_password: string, new_password_repeat } = {
-    new_password: '',
-    new_password_repeat: ''
+  account: { authentication: string } = {
+    authentication: document.URL.split("?")[1].split("=")[1]
   };
-
 
   constructor(public navCtrl: NavController,
               public user: User,
@@ -28,17 +26,18 @@ export class PasswordRecoveryPage {
     })*/
   }
 
-  changePassword() {
+  goToHome() {
 
     var headers = new HttpHeaders();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json');
+    headers.append("authentication", this.account.authentication);
 
     let postData = {
-      "password": this.account.new_password,
+      "authentication": this.account.authentication,
     };
 
-    this.api.put("users/recover_password", postData, {headers: headers})
+    this.api.put("users", postData, {headers: headers})
       .subscribe(data => {
         console.log(data['_body']);
         this.navCtrl.push('MenuPage');

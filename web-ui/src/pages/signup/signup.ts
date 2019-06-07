@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { Api, User } from '../../providers';
+import {HttpHeaders} from "@angular/common/http";
 
 @IonicPage()
 @Component({
@@ -17,34 +18,31 @@ export class SignupPage {
     password: ''
   };
 
-  // Our translated text strings
-  private signupErrorString: string;
-
   constructor(public navCtrl: NavController,
     public user: User,
     public api: Api,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
-    this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
+    /*this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
-    })
+    })*/
   }
 
   doSignup() {
 
-    var headers = new Headers();
+    var headers = new HttpHeaders();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
 
     let postData = {
-      "name": this.account.name,
+      "first_name": this.account.name,
       "last_name": this.account.last_name,
       "email": this.account.email,
       "password": this.account.password
     };
 
-    this.api.post("users", postData, headers)
+    this.api.post("users", postData, {headers: headers})
       .subscribe(data => {
         console.log(data['_body']);
         this.navCtrl.push('MenuPage');
