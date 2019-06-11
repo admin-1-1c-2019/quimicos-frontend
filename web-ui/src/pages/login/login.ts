@@ -65,7 +65,7 @@ export class LoginPage {
 
     this.api.post("users/recover_password", postData, {headers: headers})
       .subscribe(data => {
-        console.log(data['_body']);
+        this.navCtrl.push('TabsPage');
       }, error => {
         console.log(error);
       });
