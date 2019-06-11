@@ -40,7 +40,7 @@ export class PasswordRecoveryPage {
 
     this.api.put("users/recover_password", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('TabsPage');
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
       });

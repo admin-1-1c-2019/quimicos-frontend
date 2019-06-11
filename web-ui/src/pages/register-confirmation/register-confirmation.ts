@@ -39,7 +39,7 @@ export class RegisterConfirmationPage {
 
     this.api.put("users", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('TabsPage');
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
       });

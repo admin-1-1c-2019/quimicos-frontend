@@ -44,7 +44,7 @@ export class SignupPage {
 
     this.api.post("users", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('TabsPage');
+        this.navCtrl.push('MenuPage');
       }, error => {
         console.log(error);
       });
