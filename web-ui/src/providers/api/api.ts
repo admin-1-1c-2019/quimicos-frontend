@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://example.com/api/v1';
+  url: string = 'https://admin-1c-2019.herokuapp.com';
 
   constructor(public http: HttpClient) {
   }
@@ -44,4 +44,5 @@ export class Api {
   patch(endpoint: string, body: any, reqOpts?: any) {
     return this.http.patch(this.url + '/' + endpoint, body, reqOpts);
   }
+
 }

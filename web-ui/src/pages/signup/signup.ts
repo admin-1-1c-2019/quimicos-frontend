@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-
-import { User } from '../../providers';
-import { MainPage } from '../';
+import { Api, User } from '../../providers';
+import {HttpHeaders} from "@angular/common/http";
 
 @IonicPage()
 @Component({
@@ -11,43 +10,45 @@ import { MainPage } from '../';
   templateUrl: 'signup.html'
 })
 export class SignupPage {
-  // The account fields for the login form.
-  // If you're using the username field with or without email, make
-  // sure to add it to the type
-  account: { name: string, email: string, password: string } = {
-    name: 'Test Human',
-    email: 'test@example.com',
-    password: 'test'
-  };
 
-  // Our translated text strings
-  private signupErrorString: string;
+  account: { name: string, last_name: string, email: string, password: string } = {
+    name: '',
+    last_name: '',
+    email: '',
+    password: ''
+  };
 
   constructor(public navCtrl: NavController,
     public user: User,
+    public api: Api,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
-    this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
+    /*this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
-    })
+    })*/
   }
 
   doSignup() {
-    // Attempt to login in through our User service
-    this.user.signup(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
-    }, (err) => {
 
-      this.navCtrl.push(MainPage);
+    var headers = new HttpHeaders();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json' );
 
-      // Unable to sign up
-      let toast = this.toastCtrl.create({
-        message: this.signupErrorString,
-        duration: 3000,
-        position: 'top'
+    let postData = {
+      "first_name": this.account.name,
+      "last_name": this.account.last_name,
+      "email": this.account.email,
+      "password": this.account.password
+    };
+
+    this.api.post("users", postData, {headers: headers})
+      .subscribe(data => {
+        this.navCtrl.push('MenuPage');
+      }, error => {
+        console.log(error);
       });
-      toast.present();
-    });
+
   }
+
 }
