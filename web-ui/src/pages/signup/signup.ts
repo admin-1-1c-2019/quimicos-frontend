@@ -46,7 +46,8 @@ export class SignupPage {
       .subscribe(data => {
         this.navCtrl.push('MenuPage');
       }, error => {
-        console.log(error);
+        document.querySelector(".error-message").innerHTML = error.error.message;
+        document.querySelector(".error-message").removeAttribute("hidden");
       });
 
   }

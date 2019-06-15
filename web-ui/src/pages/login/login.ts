@@ -47,7 +47,7 @@ export class LoginPage {
         console.log(data['_body']);
         this.navCtrl.push('MenuPage');
       }, error => {
-        console.log(error);
+        document.querySelector(".login-error-message").innerHTML = error.error.message;
         document.querySelector(".login-error-message").removeAttribute("hidden");
       });
 
@@ -65,9 +65,10 @@ export class LoginPage {
 
     this.api.post("users/recover_password", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('MenuPage');
+        this.navCtrl.push('PasswordRecoveryPage');
       }, error => {
-        console.log(error);
+        document.querySelector(".login-error-message").innerHTML = error.error.message;
+        document.querySelector(".login-error-message").removeAttribute("hidden");
       });
   }
 }

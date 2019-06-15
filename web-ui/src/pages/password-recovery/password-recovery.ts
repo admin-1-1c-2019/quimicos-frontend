@@ -38,12 +38,18 @@ export class PasswordRecoveryPage {
       "password": this.account.new_password,
     };
 
-    this.api.put("users/recover_password", postData, {headers: headers})
-      .subscribe(data => {
-        this.navCtrl.push('MenuPage');
-      }, error => {
-        console.log(error);
-      });
+    if (this.account.new_password === this.account.new_password_repeat) {
+      this.api.put("users/recover_password", postData, {headers: headers})
+        .subscribe(data => {
+          this.navCtrl.push('MenuPage');
+        }, error => {
+          document.querySelector(".error-message").innerHTML = error.error.message;
+          document.querySelector(".error-message").removeAttribute("hidden");
+        });
+    } else {
+      document.querySelector(".error-message").innerHTML = "Error al repetir contraseña";
+      document.querySelector(".error-message").removeAttribute("hidden");
+    }
 
   }
 
