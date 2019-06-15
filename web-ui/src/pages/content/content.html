@@ -1,12 +1,27 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Home
+      Menú principal
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <p>
-  </p>
+  <h1>Bienvenido a QUIMICOS</h1>
+  <h2 padding-top>A qué sección quiere acceder?</h2>
+  <div padding>
+    <u class="blue-link" (click)="goToProductsPage()">Catálogo de productos</u>
+  </div>
+  <div padding>
+    <u class="blue-link" (click)="goToCompanyPage()">Información de la empresa</u>
+  </div>
+  <div padding>
+    <u class="blue-link" (click)="goToContactPage()">Contacto</u>
+  </div>
+  <div padding>
+    <u class="blue-link" (click)="goToHelpPage()">Ayuda</u>
+  </div>
+  <div padding>
+    <u class="blue-link" (click)="logout()">Cerrar sesión</u>
+  </div>
 </ion-content>
