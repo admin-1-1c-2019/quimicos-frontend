@@ -7,68 +7,91 @@ export class Products {
   items: Item[] = [];
 
   defaultItem: any = {
-    "name": "Burt Bear",
-    "profilePic": "assets/img/speakers/bear.jpg",
-    "about": "Burt is a Bear.",
+    "id": 1,
+    "name": "Toltrazol",
+    "description": "Kills some parasites in cats and dogs",
+    "images": "assets/img/products/toltrazol.png",
+    "activePrincipleId": 1
   };
-
 
   constructor() {
     let items = [
       {
+        "id": 1,
         "name": "Toltrazol",
-        "profilePic": "assets/img/speakers/bear.jpg",
-        "about": "Kills some parasites in cats and dogs"
+        "description": "Kills some parasites in cats and dogs",
+        "images": ["assets/img/products/toltrazol.png"],
+        "activePrincipleId": 1
       },
       {
-        "name": "Aspirine",
-        "profilePic": "assets/img/speakers/cheetah.jpg",
-        "about": "For headaches"
+        "id": 2,
+        "name": "Aspirin",
+        "description": "For headaches",
+        "images": ["assets/img/products/aspirin.jpeg"],
+        "activePrincipleId": 2
       },
       {
+        "id": 3,
         "name": "Clonazepam",
-        "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Slows you down"
+        "description": "Slows you down",
+        "images": ["assets/img/products/clonazepam.jpg"],
+        "activePrincipleId": 3
       },
       {
+        "id": 4,
         "name": "Diego's power",
-        "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Turns you into a human torch"
+        "description": "Turns you into a human torch",
+        "images": ["assets/img/products/cocaine.jpeg"],
+        "activePrincipleId": 4
       },
       {
+        "id": 5,
         "name": "Weed",
-        "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Chillax"
+        "description": "Chillax",
+        "images": ["assets/img/products/marijuana.jpeg"],
+        "activePrincipleId": 5
       },
       {
+        "id": 6,
         "name": "Heroin",
-        "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Luca not dead"
+        "description": "Luca not dead",
+        "images": ["assets/img/products/heroin.jpg"],
+        "activePrincipleId": 6
       },
       {
+        "id": 7,
         "name": "Vicodin",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Gregory House's favorite"
+        "description": "Gregory House's favorite",
+        "images": ["assets/img/products/vicodin.jpeg"],
+        "activePrincipleId": 7
       },
       {
+        "id": 8,
         "name": "Alikal",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Partied too hard last night?"
+        "description": "Partied too hard last night?",
+        "images": ["assets/img/products/alikal.jpeg"],
+        "activePrincipleId": 2
       },
       {
+        "id": 9,
         "name": "Garombol",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "And stop caring"
+        "description": "And stop caring",
+        "images": ["assets/img/products/garombol.jpg"],
+        "activePrincipleId": 8
       },
       {
+        "id": 10,
         "name": "Rivotril",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Don't mix with Ventus"
+        "description": "Don't mix with Ventus",
+        "images": ["assets/img/products/rivotril.jpg"],
+        "activePrincipleId": 3
       },
       {
+        "id": 11,
         "name": "Ayahuasca",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Don't give this to Rolando Graña"
+        "description": "Don't give this to Rolando Graña",
+        "images": ["assets/img/products/ayahuasca.jpg"],
+        "activePrincipleId": 9
       }
     ];
 
