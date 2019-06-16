@@ -34,6 +34,11 @@ export class CatalogPage {
     items = this.products.query();
     this.getPage(1);
   }
+
+  onFilterChange(filter: string){
+    items = this.products.query({name: filter});
+    this.getPage(1);
+  }
  
   getPage(page: number) {
     this.loading = true;
@@ -46,20 +51,6 @@ export class CatalogPage {
         map(res => res.items)
     );
 }
-
-  /**
-   * Perform a service for the proper items.
-   */
-  /*getItems(ev) {
-    let val = ev.target.value;
-    if (!val || !val.trim()) {
-      this.currentItems.;
-      return;
-    }
-    this.currentItems = this.items.query({
-      name: val
-    });
-  }*/
 
   /**
    * Navigate to the detail page for this item.
