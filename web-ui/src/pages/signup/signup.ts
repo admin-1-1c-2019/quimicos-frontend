@@ -44,7 +44,7 @@ export class SignupPage {
 
     this.api.post("users", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('MenuPage');
+        this.navCtrl.push('ConfirmMailPage');
       }, error => {
         document.querySelector(".error-message").innerHTML = error.error.message;
         document.querySelector(".error-message").removeAttribute("hidden");

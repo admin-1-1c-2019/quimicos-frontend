@@ -65,7 +65,7 @@ export class LoginPage {
 
     this.api.post("users/recover_password", postData, {headers: headers})
       .subscribe(data => {
-        this.navCtrl.push('PasswordRecoveryPage');
+        this.navCtrl.push('ConfirmMailPage');
       }, error => {
         document.querySelector(".login-error-message").innerHTML = error.error.message;
         document.querySelector(".login-error-message").removeAttribute("hidden");

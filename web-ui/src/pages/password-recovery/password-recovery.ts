@@ -4,16 +4,19 @@ import {Api, User} from "../../providers";
 import {TranslateService} from "@ngx-translate/core";
 import {HttpHeaders} from "@angular/common/http";
 
-@IonicPage()
+@IonicPage({
+  segment: 'password-recovery/:authorization'
+})
 @Component({
   selector: 'page-password-recovery',
   templateUrl: 'password-recovery.html'
 })
 export class PasswordRecoveryPage {
 
-  account: { new_password: string, new_password_repeat } = {
+  account: { new_password: string, new_password_repeat: string, authorization: string } = {
     new_password: '',
-    new_password_repeat: ''
+    new_password_repeat: '',
+    authorization: document.URL.split("?")[1].split("=")[1]
   };
 
 
@@ -30,16 +33,14 @@ export class PasswordRecoveryPage {
 
   changePassword() {
 
-    var headers = new HttpHeaders();
-    headers.append("Accept", 'application/json');
-    headers.append('Content-Type', 'application/json');
+    const headers = new HttpHeaders().set("Authorization", this.account.authorization);
 
     let postData = {
       "password": this.account.new_password,
     };
 
     if (this.account.new_password === this.account.new_password_repeat) {
-      this.api.put("users/recover_password", postData, {headers: headers})
+      this.api.put("users/recover_password", postData, {headers: headers, responseType: 'text/html'})
         .subscribe(data => {
           this.navCtrl.push('MenuPage');
         }, error => {
