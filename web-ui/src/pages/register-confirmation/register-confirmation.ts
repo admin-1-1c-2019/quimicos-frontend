@@ -5,7 +5,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {HttpHeaders} from "@angular/common/http";
 
 @IonicPage({
-  segment: 'register-confirmation/:authentication'
+  segment: 'register-confirmation/:authorization'
 })
 @Component({
   selector: 'page-register-confirmation',
