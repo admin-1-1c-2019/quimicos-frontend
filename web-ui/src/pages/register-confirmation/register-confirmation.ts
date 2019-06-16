@@ -4,15 +4,17 @@ import {Api, User} from "../../providers";
 import {TranslateService} from "@ngx-translate/core";
 import {HttpHeaders} from "@angular/common/http";
 
-@IonicPage()
+@IonicPage({
+  segment: 'register-confirmation/:authentication'
+})
 @Component({
   selector: 'page-register-confirmation',
   templateUrl: 'register-confirmation.html'
 })
 export class RegisterConfirmationPage {
 
-  account: { authentication: string } = {
-    authentication: document.URL.split("?")[1].split("=")[1]
+  account: { authorization: string } = {
+    authorization: document.URL.split("?")[1].split("=")[1]
   };
 
   constructor(public navCtrl: NavController,
@@ -28,16 +30,13 @@ export class RegisterConfirmationPage {
 
   goToHome() {
 
-    var headers = new HttpHeaders();
-    headers.append("Accept", 'application/json');
-    headers.append('Content-Type', 'application/json');
-    headers.append("authentication", this.account.authentication);
+    const headers = new HttpHeaders().set("Authorization", this.account.authorization);
 
     let postData = {
-      "authentication": this.account.authentication,
+      "Authorization": this.account.authorization,
     };
 
-    this.api.put("users", postData, {headers: headers})
+    this.api.put("users", postData, {headers: headers, responseType: 'text/html'})
       .subscribe(data => {
         this.navCtrl.push('MenuPage');
       }, error => {

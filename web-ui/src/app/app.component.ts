@@ -6,6 +6,7 @@ import { Config, Nav, Platform } from 'ionic-angular';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
+import {RegisterConfirmationPage} from "../pages/register-confirmation/register-confirmation";
 
 @Component({
   template: `<ion-menu [content]="content">
