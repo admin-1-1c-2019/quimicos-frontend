@@ -6,7 +6,6 @@ import { Config, Nav, Platform } from 'ionic-angular';
 
 import { FirstRunPage } from '../pages';
 import { Settings } from '../providers';
-import {RegisterConfirmationPage} from "../pages/register-confirmation/register-confirmation";
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -38,6 +37,7 @@ export class MyApp {
     { title: 'Signup', component: 'SignupPage' },
     { title: 'Change Password', component: 'ChangePasswordPage' },
     { title: 'Register Confirmation', component: 'RegisterConfirmationPage' },
+    { title: 'Confirm Mail', component: 'ConfirmMailPage' },
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Cards', component: 'CardsPage' },
     { title: 'Content', component: 'ContentPage' },
