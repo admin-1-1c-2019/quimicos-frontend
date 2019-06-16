@@ -8,6 +8,8 @@ import {Observable} from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
+// TODO Grab products from backend instead of mock
+// TODO Implement filtering by all product fields, not just name
 
 var items;
 
