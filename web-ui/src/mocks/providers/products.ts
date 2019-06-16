@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Item } from '../../models/item';
 
 @Injectable()
-export class Items {
+export class Products {
   items: Item[] = [];
 
   defaultItem: any = {
@@ -16,39 +16,59 @@ export class Items {
   constructor() {
     let items = [
       {
-        "name": "Burt Bear",
+        "name": "Toltrazol",
         "profilePic": "assets/img/speakers/bear.jpg",
-        "about": "Burt is a Bear."
+        "about": "Kills some parasites in cats and dogs"
       },
       {
-        "name": "Charlie Cheetah",
+        "name": "Aspirine",
         "profilePic": "assets/img/speakers/cheetah.jpg",
-        "about": "Charlie is a Cheetah."
+        "about": "For headaches"
       },
       {
-        "name": "Donald Duck",
+        "name": "Clonazepam",
         "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Donald is a Duck."
+        "about": "Slows you down"
       },
       {
-        "name": "Eva Eagle",
+        "name": "Diego's power",
         "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Eva is an Eagle."
+        "about": "Turns you into a human torch"
       },
       {
-        "name": "Ellie Elephant",
+        "name": "Weed",
         "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Ellie is an Elephant."
+        "about": "Chillax"
       },
       {
-        "name": "Molly Mouse",
+        "name": "Heroin",
         "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Molly is a Mouse."
+        "about": "Luca not dead"
       },
       {
-        "name": "Paul Puppy",
+        "name": "Vicodin",
         "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Paul is a Puppy."
+        "about": "Gregory House's favorite"
+      },
+      {
+        "name": "Alikal",
+        "profilePic": "assets/img/speakers/puppy.jpg",
+        "about": "Partied too hard last night?"
+      },
+      {
+        "name": "Garombol",
+        "profilePic": "assets/img/speakers/puppy.jpg",
+        "about": "And stop caring"
+      },
+      {
+        "name": "Rivotril",
+        "profilePic": "assets/img/speakers/puppy.jpg",
+        "about": "Don't mix with Ventus"
+      },
+      {
+        "name": "Ayahuasca",
+        "profilePic": "assets/img/speakers/puppy.jpg",
+        "about": "Don't give this to Rolando Graña"
       }
     ];
 
