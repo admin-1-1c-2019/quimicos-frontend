@@ -15,7 +15,9 @@ export class ContentPage {
   }
 
   goToProductsPage() {
-    this.navCtrl.push('TabsPage', this.navParams.get('admin'));
+    this.navCtrl.push('TabsPage', {
+      admin: this.navParams.get('admin')
+    });
   }
 
   goToCompanyPage() {
