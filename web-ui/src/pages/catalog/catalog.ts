@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { Item } from '../../models/item';
+import { Product } from '../../models/product';
 import { Products } from '../../providers';
 
 import {Observable} from 'rxjs';
@@ -13,7 +13,7 @@ import { of } from 'rxjs/observable/of';
 // TODO Products CRUD
 // TODO Active principles CRUD
 
-var items;
+var mockProducts;
 
 interface IServerResponse {
   items: string[];
@@ -34,7 +34,7 @@ export class CatalogPage {
   static readonly NAME = "NAME";
   static readonly SIZE = "SIZE";
 
-  currentItems: Observable<any[]>;
+  currentProducts: Observable<any[]>;
   loading: boolean;
   p: number = 1;
   total: number;
@@ -43,7 +43,7 @@ export class CatalogPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public products: Products) { }
 
   ionViewDidLoad() {
-    items = this.products.query();
+    mockProducts = this.products.query();
     this.getPage(1);
   }
 
@@ -53,7 +53,7 @@ export class CatalogPage {
   }
 
   applyFilter(){
-    items = this.products.query({
+    mockProducts = this.products.query({
       id: this.filter.get(CatalogPage.ID),
       name: this.filter.get(CatalogPage.NAME),
       description: this.filter.get(CatalogPage.DESC),
@@ -65,7 +65,7 @@ export class CatalogPage {
 
   getPage(page: number) {
     this.loading = true;
-    this.currentItems = serverCall(page).pipe(
+    this.currentProducts = serverCall(page).pipe(
         tap(res => {
             this.total = res.total;
             this.p = page;
@@ -76,11 +76,11 @@ export class CatalogPage {
   }
 
   /**
-   * Navigate to the detail page for this item.
+   * Navigate to the detail page for this product.
    */
-  openItem(item: Item) {
-    this.navCtrl.push('ItemDetailPage', {
-      item: item
+  openProduct(prod: Product) {
+    this.navCtrl.push('ProductDetailPage', {
+      product: prod
     });
   }
 
@@ -95,7 +95,7 @@ function serverCall(page: number): Observable<IServerResponse> {
   const end = start + perPage;
 
   return of({
-          items: items.slice(start, end),
-          total: items.length
+          items: mockProducts.slice(start, end),
+          total: mockProducts.length
       }).pipe(delay(1000));
 }

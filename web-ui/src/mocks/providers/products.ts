@@ -1,30 +1,23 @@
 import { Injectable } from '@angular/core';
 
-import { Item } from '../../models/item';
+import { Product } from '../../models/product';
 
 @Injectable()
 export class Products {
-  items: Item[] = [];
+  products: Product[] = [];
 
-  defaultItem: any = {
+  defaultProduct: any = {
     "id": 1,
     "name": "Toltrazol",
     "description": "Kills some parasites in cats and dogs",
-    "images": "assets/img/products/toltrazol.png",
+    "images": ["assets/img/products/toltrazol_01.png", "assets/img/products/toltrazol_02.png"],
     "size": 100,
     "activePrincipleId": 1
   };
 
   constructor() {
-    let items = [
-      {
-        "id": 1,
-        "name": "Toltrazol",
-        "description": "Kills some parasites in cats and dogs",
-        "images": ["assets/img/products/toltrazol.png"],
-        "size": 100,
-        "activePrincipleId": 1
-      },
+    let products = [
+      this.defaultProduct,
       {
         "id": 2,
         "name": "Aspirin",
@@ -107,22 +100,22 @@ export class Products {
       }
     ];
 
-    for (let item of items) {
-      this.items.push(new Item(item));
+    for (let product of products) {
+      this.products.push(new Product(product));
     }
   }
 
   query(params?: any) {
     if (!params) {
-      return this.items;
+      return this.products;
     }
 
-    return this.items.filter((item) => {
+    return this.products.filter((product) => {
       for (let key in params) {
         if (params[key] == null || params[key] == undefined || params[key] == "") {
           continue;
         }
-        let field = item[key];
+        let field = product[key];
         if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
           continue;
         } else if (field == params[key]) {
@@ -131,15 +124,15 @@ export class Products {
           return null;
         }
       }
-      return item;
+      return product;
     });
   }
 
-  add(item: Item) {
-    this.items.push(item);
+  add(product: Product) {
+    this.products.push(product);
   }
 
-  delete(item: Item) {
-    this.items.splice(this.items.indexOf(item), 1);
+  delete(product: Product) {
+    this.products.splice(this.products.indexOf(product), 1);
   }
 }

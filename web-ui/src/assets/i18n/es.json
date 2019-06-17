@@ -51,9 +51,9 @@
   "SEARCH_BY_SIZE_PLACEHOLDER": "Buscar en el catálogo por tamaño, ej: 150",
   "SEARCH_BY_APID_PLACEHOLDER": "Buscar en el catálogo por id de principio activo, ej: 1",
 
-  "SEARCH_PRODUCT_ID": "ID Producto",
-  "SEARCH_PRODUCT_NAME": "Nombre",
-  "SEARCH_PRODUCT_DESC": "Descripción",
-  "SEARCH_PRODUCT_SIZE": "Tamaño",
-  "SEARCH_PRODUCT_APID": "ID p. activo"
+  "PRODUCT_ID": "ID Producto",
+  "PRODUCT_NAME": "Nombre",
+  "PRODUCT_DESC": "Descripción",
+  "PRODUCT_SIZE": "Tamaño",
+  "PRODUCT_APID": "ID p. activo"
 }

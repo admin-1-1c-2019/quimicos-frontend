@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ion-col col-1 class="sb-label-col">
-        <ion-label>{{'SEARCH_PRODUCT_ID' | translate}}</ion-label>
+        <ion-label>{{'PRODUCT_ID' | translate}}</ion-label>
       </ion-col>
       <ion-col col-11>
           <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.ID, $event.value)' 
@@ -21,7 +21,7 @@
 
     <ion-row>
         <ion-col col-1 col-1 class="sb-label-col">
-          <ion-label>{{'SEARCH_PRODUCT_NAME' | translate}}</ion-label>
+          <ion-label>{{'PRODUCT_NAME' | translate}}</ion-label>
         </ion-col>
         <ion-col col-11>
             <ion-searchbar type="text" (ionChange)='onFilterChange(Catalog.NAME, $event.value)'
@@ -31,7 +31,7 @@
 
     <ion-row>
         <ion-col col-1 col-1 class="sb-label-col">
-          <ion-label>{{'SEARCH_PRODUCT_DESC' | translate}}</ion-label>
+          <ion-label>{{'PRODUCT_DESC' | translate}}</ion-label>
         </ion-col>
         <ion-col col-11>
           <ion-searchbar type="text" (ionChange)='onFilterChange(Catalog.DESC, $event.value)'
@@ -41,7 +41,7 @@
 
     <ion-row>
         <ion-col col-1 col-1 class="sb-label-col">
-          <ion-label>{{'SEARCH_PRODUCT_SIZE' | translate}}</ion-label>
+          <ion-label>{{'PRODUCT_SIZE' | translate}}</ion-label>
         </ion-col>
         <ion-col col-11>
           <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.SIZE, $event.value)' 
@@ -51,7 +51,7 @@
 
     <ion-row>
         <ion-col col-1 col-1 class="sb-label-col">
-          <ion-label>{{'SEARCH_PRODUCT_APID' | translate}}</ion-label>
+          <ion-label>{{'PRODUCT_APID' | translate}}</ion-label>
         </ion-col>
         <ion-col col-11>
           <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.APID, $event.value)'
@@ -61,13 +61,12 @@
   </ion-grid>
  
   <ion-list>
-    <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+    <button ion-item (click)="openProduct(product)" *ngFor="let product of currentProducts | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
       <ion-avatar item-start>
-        <img [src]="item.images[0]" />
+        <img [src]="product.images[0]" />
       </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.description}}</p>
-      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+      <h2>{{product.name}}</h2>
+      <p>{{product.description}}</p>
     </button>
   </ion-list>
 
