@@ -37,7 +37,7 @@ export class CatalogPage {
     this.getPage(1);
   }
 
-  onFilterChange(filter: string){
+  onNameFilterChange(filter: string){
     items = this.products.query({name: filter});
     this.getPage(1);
   }
