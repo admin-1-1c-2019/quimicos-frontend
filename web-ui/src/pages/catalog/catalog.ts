@@ -9,7 +9,7 @@ import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 // TODO Grab products from backend instead of mock
-// TODO Display all product fields in detailed view
+// TODO Show active principle details when clicking in its id in product details
 // TODO Products CRUD
 // TODO Active principles CRUD
 
