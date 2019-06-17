@@ -14,9 +14,10 @@ export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { email: string, password: string } = {
-    email: 'tpproyectos1@gmail.com',
-    password: 'TPAdmin2019!'
+  authorization: string;
+  account: { email: string, password: string} = {
+    email: 'zz@zz.zz',
+    password: 'aaaaaaaa',
   };
 
   constructor(public navCtrl: NavController,
@@ -43,14 +44,15 @@ export class LoginPage {
     };
 
     this.api.post("users/login", postData, {headers: headers})
-      .subscribe(data => {
+      .subscribe((data) => {
+        //this.authorization = data.headers.get('Authorization');
         this.navCtrl.push('ContentPage', {
-          admin: data.admin
+            admin: data.admin
+          });
+        }, error => {
+          document.querySelector(".login-error-message").innerHTML = error.error.message;
+          document.querySelector(".login-error-message").removeAttribute("hidden");
         });
-      }, error => {
-        document.querySelector(".login-error-message").innerHTML = error.error.message;
-        document.querySelector(".login-error-message").removeAttribute("hidden");
-      });
 
   }
 

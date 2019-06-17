@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Convertir usuario a Administrador</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="upgradeToAdmin()">
+    <ion-list>
+
+      <ion-item>
+        <ion-input type="email" placeholder="Email del usuario" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button class="upgrade-button" block>Convertir a Admin</button>
+      </div>
+
+      <div padding>
+        <div class="ok-message" hidden></div>
+      </div>
+
+      <div padding>
+        <div class="error-message" hidden></div>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

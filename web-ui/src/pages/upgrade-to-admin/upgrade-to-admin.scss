@@ -1,0 +1,18 @@
+page-login {
+
+  .login-error-message {
+    color: red;
+  }
+
+  .blue-link {
+    color: blue;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .login-button {
+    background-color: blue;
+  }
+
+}
