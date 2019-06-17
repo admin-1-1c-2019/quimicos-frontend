@@ -70,8 +70,13 @@
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
   </ion-list>
-  <div class="has-text-centered">
-    <div class="spinner" [ngClass]="{ 'hidden': !loading }"></div>
-    <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
-  </div>
+
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-spinner *ngIf="loading"></ion-spinner>
+    </ion-row>
+    <ion-row justify-content-center align-items-center>
+      <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+    </ion-row>
+  </ion-grid>
 </ion-content>

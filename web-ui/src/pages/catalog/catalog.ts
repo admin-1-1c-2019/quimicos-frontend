@@ -9,8 +9,9 @@ import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 // TODO Grab products from backend instead of mock
-// TODO Dislay all product fields in detailed view
-// TODO Display spinner correctly during server call
+// TODO Display all product fields in detailed view
+// TODO Products CRUD
+// TODO Active principles CRUD
 
 var items;
 
