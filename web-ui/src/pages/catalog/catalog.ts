@@ -8,10 +8,11 @@ import {Observable} from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
-// TODO Grab products from backend instead of mock
-// TODO Show active principle details when clicking in its id in product details
 // TODO Products CRUD
 // TODO Active principles CRUD
+// TODO Show active principle details when clicking in its id in product details
+// TODO Grab products from backend instead of mock
+// TODO Fix security vulnerabilities
 
 var mockProducts;
 
