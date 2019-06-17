@@ -24,6 +24,7 @@ interface IServerResponse {
   templateUrl: 'catalog.html'
 })
 export class CatalogPage {
+  static readonly DESC = "DESC"
   static readonly ID = "ID"
   static readonly NAME = "NAME"
 
@@ -40,6 +41,11 @@ export class CatalogPage {
     this.getPage(1);
   }
 
+  onDescFilterChange(filter: string){
+    this.filter.set(CatalogPage.DESC, filter)
+    this.applyFilter()
+  }
+
   onIdFilterChange(filter: string){
     this.filter.set(CatalogPage.ID, filter)
     this.applyFilter()
@@ -53,7 +59,8 @@ export class CatalogPage {
   applyFilter(){
     items = this.products.query({
       id: this.filter.get(CatalogPage.ID),
-      name: this.filter.get(CatalogPage.NAME)
+      name: this.filter.get(CatalogPage.NAME),
+      description: this.filter.get(CatalogPage.DESC)
     });
     this.getPage(1);
   }
