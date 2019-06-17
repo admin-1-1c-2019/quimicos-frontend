@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
-import { ListMasterPage } from './list-master';
+import { ProductCrudPage } from './product-crud';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-    ListMasterPage,
+    ProductCrudPage,
   ],
   imports: [
-    IonicPageModule.forChild(ListMasterPage),
+    IonicPageModule.forChild(ProductCrudPage),
     TranslateModule.forChild(),
     NgxPaginationModule
   ],
   exports: [
-    ListMasterPage
+    ProductCrudPage
   ]
 })
-export class ListMasterPageModule { }
+export class ProductCrudPageModule { }

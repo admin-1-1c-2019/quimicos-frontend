@@ -8,8 +8,8 @@ import {Observable} from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
-// TODO Products CRUD
 // TODO Active principles CRUD
+// TODO Products CRUD
 // TODO Show active principle details when clicking in its id in product details
 // TODO Grab products from backend instead of mock
 // TODO Fix security vulnerabilities

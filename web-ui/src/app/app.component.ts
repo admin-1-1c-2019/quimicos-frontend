@@ -45,7 +45,7 @@ export class MyApp {
     { title: 'Help', component: 'HelpPage' },
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Cards', component: 'CardsPage' },
-    { title: 'Master Detail', component: 'ListMasterPage' },
+    { title: 'Master Detail', component: 'ProductCrudPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'Catalog', component: 'CatalogPage' }
   ];

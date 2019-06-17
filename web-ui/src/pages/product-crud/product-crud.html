@@ -16,7 +16,7 @@
 
   <ion-list>
     <ion-item-sliding *ngFor="let product of currentProducts | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
-      <button ion-item (click)="openItem(product)">
+      <button ion-item (click)="openProduct(product)">
         <ion-avatar item-start>
           <img [src]="product.images[0]" />
         </ion-avatar>

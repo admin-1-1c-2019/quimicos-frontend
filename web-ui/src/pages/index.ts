@@ -7,6 +7,6 @@ export const FirstRunPage = document.URL.indexOf('register-confirmation') >= 0 ?
 export const MainPage = 'TabsPage';
 
 // The initial root pages for our tabs (remove if not using tabs)
-export const Tab1Root = 'ListMasterPage';
+export const Tab1Root = 'ProductCrudPage';
 export const Tab2Root = 'CatalogPage';
 export const Tab3Root = 'SettingsPage';

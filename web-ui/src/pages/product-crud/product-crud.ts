@@ -16,10 +16,10 @@ interface IServerResponse {
 
 @IonicPage()
 @Component({
-  selector: 'page-list-master',
-  templateUrl: 'list-master.html'
+  selector: 'page-product-crud',
+  templateUrl: 'product-crud.html'
 })
-export class ListMasterPage {
+export class ProductCrudPage {
   loading: boolean;
   currentProducts: Observable<any[]>;
   p: number = 1;
@@ -72,9 +72,9 @@ export class ListMasterPage {
   /**
    * Navigate to the detail page for this product.
    */
-  openItem(item: Product) {
+  openProduct(product: Product) {
     this.navCtrl.push('ProductDetailPage', {
-      item: item
+      product: product
     });
   }
 }
