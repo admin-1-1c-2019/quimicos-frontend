@@ -37,11 +37,15 @@ export class MyApp {
     { title: 'Signup', component: 'SignupPage' },
     { title: 'Change Password', component: 'ChangePasswordPage' },
     { title: 'Register Confirmation', component: 'RegisterConfirmationPage' },
+    { title: 'Confirm Mail', component: 'ConfirmMailPage' },
+    { title: 'Menu', component: 'MenuPage' },
+    { title: 'Content', component: 'ContentPage' },
+    { title: 'Contact', component: 'ContactPage' },
+    { title: 'Company', component: 'Company' },
+    { title: 'Help', component: 'HelpPage' },
     { title: 'Tabs', component: 'TabsPage' },
     { title: 'Cards', component: 'CardsPage' },
-    { title: 'Content', component: 'ContentPage' },
     { title: 'Master Detail', component: 'ListMasterPage' },
-    { title: 'Menu', component: 'MenuPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'Catalog', component: 'CatalogPage' }
   ];

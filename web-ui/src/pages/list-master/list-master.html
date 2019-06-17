@@ -15,14 +15,13 @@
 <ion-content>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let item of currentItems">
-      <button ion-item (click)="openItem(item)">
+    <ion-item-sliding *ngFor="let product of currentProducts | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+      <button ion-item (click)="openItem(product)">
         <ion-avatar item-start>
-          <img [src]="item.images[0]" />
+          <img [src]="product.images[0]" />
         </ion-avatar>
-        <h2>{{item.name}}</h2>
-        <p>{{item.description}}</p>
-        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
       </button>
 
       <ion-item-options>
@@ -32,4 +31,12 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-spinner *ngIf="loading"></ion-spinner>
+    </ion-row>
+    <ion-row justify-content-center align-items-center>
+      <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+    </ion-row>
+  </ion-grid>
 </ion-content>

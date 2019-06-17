@@ -1,8 +1,18 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController, NavController } from 'ionic-angular';
 
-import { Item } from '../../models/item';
+import { Product } from '../../models/product';
 import { Products } from '../../providers';
+
+import {Observable} from 'rxjs';
+import { delay, map, tap } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
+
+var mockProducts;
+interface IServerResponse {
+  items: string[];
+  total: number;
+}
 
 @IonicPage()
 @Component({
@@ -10,10 +20,26 @@ import { Products } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Item[];
+  loading: boolean;
+  currentProducts: Observable<any[]>;
+  p: number = 1;
+  total: number;
 
-  constructor(public navCtrl: NavController, public items: Products, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+  constructor(public navCtrl: NavController, public products: Products, public modalCtrl: ModalController) {
+    mockProducts = this.products.query();
+    this.getPage(1);
+  }
+
+  getPage(page: number) {
+    this.loading = true;
+    this.currentProducts = serverCall(page).pipe(
+        tap(res => {
+            this.total = res.total;
+            this.p = page;
+            this.loading = false;
+        }),
+        map(res => res.items)
+    );
   }
 
   /**
@@ -27,28 +53,42 @@ export class ListMasterPage {
    * modal and then adds the new item to our data source if the user created one.
    */
   addItem() {
-    let addModal = this.modalCtrl.create('ItemCreatePage');
+    let addModal = this.modalCtrl.create('ProductCreatePage');
     addModal.onDidDismiss(item => {
       if (item) {
-        this.items.add(item);
+        this.products.add(item);
       }
     })
     addModal.present();
   }
 
   /**
-   * Delete an item from the list of items.
+   * Delete an item from the list of products.
    */
   deleteItem(item) {
-    this.items.delete(item);
+    this.products.delete(item);
   }
 
   /**
-   * Navigate to the detail page for this item.
+   * Navigate to the detail page for this product.
    */
-  openItem(item: Item) {
-    this.navCtrl.push('ItemDetailPage', {
+  openItem(item: Product) {
+    this.navCtrl.push('ProductDetailPage', {
       item: item
     });
   }
+}
+
+/**
+ * Simulate an async HTTP call with a delayed observable.
+ */
+function serverCall(page: number): Observable<IServerResponse> {
+  const perPage = 10;
+  const start = (page - 1) * perPage;
+  const end = start + perPage;
+
+  return of({
+          items: mockProducts.slice(start, end),
+          total: mockProducts.length
+      }).pipe(delay(1000));
 }

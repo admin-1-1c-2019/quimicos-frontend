@@ -1,7 +1,6 @@
 // The page the user lands on after opening the app and without a session
-//export const FirstRunPage = 'WelcomePage';
-// TODO Bypassing onboarding to test around login issue
-export const FirstRunPage = 'CatalogPage';
+export const FirstRunPage = document.URL.indexOf('register-confirmation') >= 0 ? 'RegisterConfirmationPage' :
+  (document.URL.indexOf('password-recovery') >= 0 ? 'PasswordRecoveryPage' : 'WelcomePage');
 
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs
