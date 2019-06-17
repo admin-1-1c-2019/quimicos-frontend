@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
-import { SettingsPage } from './settings';
+import { ActivePrincipleDetailPage } from './active-principle-detail';
 
 @NgModule({
   declarations: [
-    SettingsPage,
+    ActivePrincipleDetailPage,
   ],
   imports: [
-    IonicPageModule.forChild(SettingsPage),
+    IonicPageModule.forChild(ActivePrincipleDetailPage),
     TranslateModule.forChild()
   ],
   exports: [
-    SettingsPage
+    ActivePrincipleDetailPage
   ]
 })
-export class SettingsPageModule { }
+export class ActivePrincipleDetailPageModule { }

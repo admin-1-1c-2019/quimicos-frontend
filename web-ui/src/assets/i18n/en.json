@@ -9,8 +9,8 @@
   "SIGNUP": "Sign up",
 
   "TAB1_TITLE": "Products",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAB2_TITLE": "Active Principles",
+  "TAB3_TITLE": "Search",
 
   "MAP_TITLE": "Map",
 
@@ -30,16 +30,6 @@
 
   "WELCOME_INTRO": "The starting point for your next great Ionic app",
 
-  "SETTINGS_TITLE": "Settings",
-  "SETTINGS_OPTION1": "Option 1",
-  "SETTINGS_OPTION2": "Option 2",
-  "SETTINGS_OPTION3": "Option 3",
-  "SETTINGS_OPTION4": "Option 4",
-
-  "SETTINGS_PROFILE_BUTTON": "Edit Profile",
-
-  "SETTINGS_PAGE_PROFILE": "Edit Profile",
-
   "WELCOME_TITLE": "Welcome",
 
   "LOGIN_TITLE": "Sign in",
@@ -49,7 +39,8 @@
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
 
-  "LIST_MASTER_TITLE": "Products",
+  "PRODUCT_LIST_TITLE": "Products",
+  "ACTIVE_PRINCIPLE_LIST_TITLE": "Active principles",
 
   "ITEM_CREATE_TITLE": "New Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
@@ -74,5 +65,8 @@
   "PRODUCT_NAME": "Name",
   "PRODUCT_DESC": "Description",
   "PRODUCT_SIZE": "Size",
-  "PRODUCT_APID": "Active p. ID"
+  "PRODUCT_APID": "Active p. ID",
+
+  "ACTIVE_PRINCIPLE_ID": "Active Principle ID",
+  "ACTIVE_PRINCIPLE_DESC": "Description"
 }

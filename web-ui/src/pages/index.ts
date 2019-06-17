@@ -8,5 +8,5 @@ export const MainPage = 'TabsPage';
 
 // The initial root pages for our tabs (remove if not using tabs)
 export const Tab1Root = 'ProductCrudPage';
-export const Tab2Root = 'CatalogPage';
-export const Tab3Root = 'SettingsPage';
+export const Tab2Root = 'ActivePrincipleCrudPage';
+export const Tab3Root = 'CatalogPage';
