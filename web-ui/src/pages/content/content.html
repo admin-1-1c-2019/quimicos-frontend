@@ -12,7 +12,7 @@
   <div padding>
     <h4><u class="blue-link" (click)="goToProductsPage()">Catálogo de productos</u></h4>
   </div>
-  <div padding hidden class="only-admin">
+  <div *ngIf="admin" padding>
     <h4><u class="blue-link" (click)="turnUserToAdmin()">Convertir cliente a administrador</u></h4>
   </div>
   <div padding>

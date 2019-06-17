@@ -7,11 +7,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'content.html'
 })
 export class ContentPage {
+  admin: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    if (navParams.get('admin')) {
-      document.querySelector(".only-admin").removeAttribute("hidden");
-    }
+    this.admin = navParams.get('admin');
   }
 
   goToProductsPage() {
@@ -37,7 +36,9 @@ export class ContentPage {
   }
 
   turnUserToAdmin() {
-    this.navCtrl.push('HelpPage'); //TODO: esto es solo para que no rompa por ahora
+    this.navCtrl.push('UpgradeToAdminPage', {
+      authorization: this.navParams.get('authorization')
+    });
   }
 
 }
