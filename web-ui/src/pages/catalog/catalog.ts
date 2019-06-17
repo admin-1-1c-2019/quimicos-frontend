@@ -9,10 +9,10 @@ import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 // TODO Grab products from backend instead of mock
-// TODO Fix tab ordering for filter inputs
 // TODO Dislay all product fields in detailed view
 // TODO Display spinner correctly during server call
 // TODO Add spanish locale
+// TODO Label inputs (you lose track of which is which after entering values) 
 
 var items;
 
