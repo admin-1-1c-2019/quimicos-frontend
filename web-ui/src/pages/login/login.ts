@@ -44,7 +44,6 @@ export class LoginPage {
 
     this.api.post("users/login", postData, {headers: headers})
       .subscribe(data => {
-        console.log(data['_body']);
         this.navCtrl.push('MenuPage');
       }, error => {
         document.querySelector(".login-error-message").innerHTML = error.error.message;
