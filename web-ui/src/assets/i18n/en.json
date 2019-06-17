@@ -68,5 +68,11 @@
   "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\"",
   "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description, e.g. \"Sedative\"",
   "SEARCH_BY_SIZE_PLACEHOLDER": "Search the product list by size, e.g. 150",
-  "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1"
+  "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1",
+
+  "SEARCH_PRODUCT_ID": "Product ID",
+  "SEARCH_PRODUCT_NAME": "Name",
+  "SEARCH_PRODUCT_DESC": "Description",
+  "SEARCH_PRODUCT_SIZE": "Size",
+  "SEARCH_PRODUCT_APID": "Active p. ID"
 }
