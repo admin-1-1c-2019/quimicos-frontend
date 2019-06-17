@@ -45,8 +45,8 @@ export class LoginPage {
     this.api.post("users/login", postData, {headers: headers, observe: 'response'})
       .subscribe(data => {
         this.navCtrl.push('ContentPage', {
-            admin: data.body.admin,
-            authorization: data.headers.get('authorization')
+            admin: data["body"].admin,
+            authorization: data["headers"].get('authorization')
           });
         }, error => {
           document.querySelector(".login-error-message").innerHTML = error.error.message;
