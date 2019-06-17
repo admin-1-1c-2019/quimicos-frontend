@@ -24,6 +24,8 @@ interface IServerResponse {
   templateUrl: 'catalog.html'
 })
 export class CatalogPage {
+  static readonly ID = "ID"
+  static readonly NAME = "NAME"
 
   currentItems: Observable<any[]>;
   loading: boolean;
@@ -39,19 +41,19 @@ export class CatalogPage {
   }
 
   onIdFilterChange(filter: string){
-    this.filter.set("ID", filter)
+    this.filter.set(CatalogPage.ID, filter)
     this.applyFilter()
   }
 
   onNameFilterChange(filter: string){
-    this.filter.set("NAME", filter)
+    this.filter.set(CatalogPage.NAME, filter)
     this.applyFilter()
   }
  
   applyFilter(){
     items = this.products.query({
-      id: this.filter.get("ID"),
-      name: this.filter.get("NAME")
+      id: this.filter.get(CatalogPage.ID),
+      name: this.filter.get(CatalogPage.NAME)
     });
     this.getPage(1);
   }
