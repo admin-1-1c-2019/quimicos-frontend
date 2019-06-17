@@ -66,7 +66,7 @@
   "SEARCH_TITLE": "Busca",
   "SEARCH_BY_NAME_PLACEHOLDER": "Procure um produto da lista, ex: \"Aspirin\"",
   "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\"",
-  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description",
+  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description, e.g. \"Sedative\"",
   "SEARCH_BY_SIZE_PLACEHOLDER": "Search the product list by size, e.g. 150",
   "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1"
 }
