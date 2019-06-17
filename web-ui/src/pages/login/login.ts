@@ -14,7 +14,6 @@ export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  authorization: string;
   account: { email: string, password: string} = {
     email: 'zz@zz.zz',
     password: 'aaaaaaaa',
@@ -43,11 +42,11 @@ export class LoginPage {
       "password": this.account.password
     };
 
-    this.api.post("users/login", postData, {headers: headers})
-      .subscribe((data) => {
-        //this.authorization = data.headers.get('Authorization');
+    this.api.post("users/login", postData, {headers: headers, observe: 'response'})
+      .subscribe(data => {
         this.navCtrl.push('ContentPage', {
-            admin: data.admin
+            admin: data.body.admin,
+            authorization: data.headers.get('authorization')
           });
         }, error => {
           document.querySelector(".login-error-message").innerHTML = error.error.message;

@@ -36,7 +36,9 @@ export class ContentPage {
   }
 
   turnUserToAdmin() {
-    this.navCtrl.push('UpgradeToAdminPage');
+    this.navCtrl.push('UpgradeToAdminPage', {
+      authorization: this.navParams.get('authorization')
+    });
   }
 
 }
