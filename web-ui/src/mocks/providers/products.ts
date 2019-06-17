@@ -11,6 +11,7 @@ export class Products {
     "name": "Toltrazol",
     "description": "Kills some parasites in cats and dogs",
     "images": "assets/img/products/toltrazol.png",
+    "size": 100,
     "activePrincipleId": 1
   };
 
@@ -21,6 +22,7 @@ export class Products {
         "name": "Toltrazol",
         "description": "Kills some parasites in cats and dogs",
         "images": ["assets/img/products/toltrazol.png"],
+        "size": 100,
         "activePrincipleId": 1
       },
       {
@@ -28,6 +30,7 @@ export class Products {
         "name": "Aspirin",
         "description": "For headaches",
         "images": ["assets/img/products/aspirin.jpeg"],
+        "size": 200,
         "activePrincipleId": 2
       },
       {
@@ -35,6 +38,7 @@ export class Products {
         "name": "Clonazepam",
         "description": "Slows you down",
         "images": ["assets/img/products/clonazepam.jpg"],
+        "size": 150,
         "activePrincipleId": 3
       },
       {
@@ -42,6 +46,7 @@ export class Products {
         "name": "Diego's power",
         "description": "Turns you into a human torch",
         "images": ["assets/img/products/cocaine.jpeg"],
+        "size": 100,
         "activePrincipleId": 4
       },
       {
@@ -49,6 +54,7 @@ export class Products {
         "name": "Weed",
         "description": "Chillax",
         "images": ["assets/img/products/marijuana.jpeg"],
+        "size": 250,
         "activePrincipleId": 5
       },
       {
@@ -56,6 +62,7 @@ export class Products {
         "name": "Heroin",
         "description": "Luca not dead",
         "images": ["assets/img/products/heroin.jpg"],
+        "size": 350,
         "activePrincipleId": 6
       },
       {
@@ -63,6 +70,7 @@ export class Products {
         "name": "Vicodin",
         "description": "Gregory House's favorite",
         "images": ["assets/img/products/vicodin.jpeg"],
+        "size": 100,
         "activePrincipleId": 7
       },
       {
@@ -70,6 +78,7 @@ export class Products {
         "name": "Alikal",
         "description": "Partied too hard last night?",
         "images": ["assets/img/products/alikal.jpeg"],
+        "size": 200,
         "activePrincipleId": 2
       },
       {
@@ -77,6 +86,7 @@ export class Products {
         "name": "Garombol",
         "description": "And stop caring",
         "images": ["assets/img/products/garombol.jpg"],
+        "size": 70,
         "activePrincipleId": 8
       },
       {
@@ -84,6 +94,7 @@ export class Products {
         "name": "Rivotril",
         "description": "Don't mix with Ventus",
         "images": ["assets/img/products/rivotril.jpg"],
+        "size": 150,
         "activePrincipleId": 3
       },
       {
@@ -91,6 +102,7 @@ export class Products {
         "name": "Ayahuasca",
         "description": "Don't give this to Rolando Graña",
         "images": ["assets/img/products/ayahuasca.jpg"],
+        "size": 20,
         "activePrincipleId": 9
       }
     ];

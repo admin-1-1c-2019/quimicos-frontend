@@ -54,5 +54,7 @@
   "SEARCH_TITLE": "Suche",
   "SEARCH_BY_NAME_PLACEHOLDER": "Durchsuchen Sie die Produktliste nach Namen, zum Beispiel \"Aspirin\"",
   "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\"",
-  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description"
+  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description",
+  "SEARCH_BY_SIZE_PLACEHOLDER": "Search the product list by size, e.g. 150",
+  "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1"
 }

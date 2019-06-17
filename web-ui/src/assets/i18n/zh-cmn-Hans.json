@@ -66,5 +66,7 @@
   "SEARCH_TITLE": "搜索",
   "SEARCH_BY_NAME_PLACEHOLDER": "搜索项目列表, 比如：\"Aspirin\"",
   "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\"",
-  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description"
+  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description",
+  "SEARCH_BY_SIZE_PLACEHOLDER": "Search the product list by size, e.g. 150",
+  "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1"
 }

@@ -9,7 +9,10 @@ import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 // TODO Grab products from backend instead of mock
-// TODO Implement filtering by all product fields, not just name
+// TODO Fix tab ordering for filter inputs
+// TODO Dislay all product fields in detailed view
+// TODO Display spinner correctly during server call
+// TODO Add spanish locale
 
 var items;
 
@@ -26,9 +29,11 @@ interface IServerResponse {
 export class CatalogPage {
   public Catalog = CatalogPage
 
-  static readonly DESC = "DESC"
-  static readonly ID = "ID"
-  static readonly NAME = "NAME"
+  static readonly APID = "APID";
+  static readonly DESC = "DESC";
+  static readonly ID = "ID";
+  static readonly NAME = "NAME";
+  static readonly SIZE = "SIZE";
 
   currentItems: Observable<any[]>;
   loading: boolean;
@@ -52,7 +57,9 @@ export class CatalogPage {
     items = this.products.query({
       id: this.filter.get(CatalogPage.ID),
       name: this.filter.get(CatalogPage.NAME),
-      description: this.filter.get(CatalogPage.DESC)
+      description: this.filter.get(CatalogPage.DESC),
+      size: this.filter.get(CatalogPage.SIZE),
+      activePrincipleId: this.filter.get(CatalogPage.APID)
     });
     this.getPage(1);
   }
