@@ -76,5 +76,6 @@
   "CARDS_TITLE": "Soc. siete",
 
   "SEARCH_TITLE": "Hľadať",
-  "SEARCH_BY_NAME_PLACEHOLDER": "Napíšte hľadaný výraz, e.g. \"Aspirin\""
+  "SEARCH_BY_NAME_PLACEHOLDER": "Napíšte hľadaný výraz, e.g. \"Aspirin\"",
+  "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\""
 }

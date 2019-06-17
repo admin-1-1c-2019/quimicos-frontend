@@ -8,6 +8,7 @@
 
 
 <ion-content>
+  <ion-searchbar (ionChange)='onIdFilterChange($event.value)' placeholder="{{ 'SEARCH_BY_ID_PLACEHOLDER' | translate }}"></ion-searchbar>
   <ion-searchbar (ionChange)='onNameFilterChange($event.value)' placeholder="{{ 'SEARCH_BY_NAME_PLACEHOLDER' | translate }}"></ion-searchbar>
   <ion-list>
     <button ion-item (click)="openItem(item)" *ngFor="let item of currentItems | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">

@@ -107,14 +107,19 @@ export class Products {
 
     return this.items.filter((item) => {
       for (let key in params) {
+        if (params[key] == null || params[key] == undefined || params[key] == "") {
+          continue;
+        }
         let field = item[key];
         if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {
-          return item;
+          continue;
         } else if (field == params[key]) {
-          return item;
+          continue;
+        } else {
+          return null;
         }
       }
-      return null;
+      return item;
     });
   }
 

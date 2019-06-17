@@ -64,5 +64,6 @@
   "CARDS_TITLE": "社交",
 
   "SEARCH_TITLE": "搜索",
-  "SEARCH_BY_NAME_PLACEHOLDER": "搜索项目列表, 比如：\"Aspirin\""
+  "SEARCH_BY_NAME_PLACEHOLDER": "搜索项目列表, 比如：\"Aspirin\"",
+  "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\""
 }

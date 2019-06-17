@@ -64,5 +64,6 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Ricerca",
-  "SEARCH_BY_NAME_PLACEHOLDER": "Trova prodotto in lista, ex. \"Aspirin\""
+  "SEARCH_BY_NAME_PLACEHOLDER": "Trova prodotto in lista, ex. \"Aspirin\"",
+  "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\""
 }

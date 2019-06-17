@@ -64,5 +64,6 @@
   "CARDS_TITLE": "ソーシャル",
 
   "SEARCH_TITLE": "検索",
-  "SEARCH_BY_NAME_PLACEHOLDER": "製品リスト \"Aspirin\" の検索例"
+  "SEARCH_BY_NAME_PLACEHOLDER": "製品リスト \"Aspirin\" の検索例",
+  "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\""
 }

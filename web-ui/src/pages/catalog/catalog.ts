@@ -29,6 +29,7 @@ export class CatalogPage {
   loading: boolean;
   p: number = 1;
   total: number;
+  filter: Map<string, any> = new Map<string,any>();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public products: Products) { }
 
@@ -37,11 +38,24 @@ export class CatalogPage {
     this.getPage(1);
   }
 
+  onIdFilterChange(filter: string){
+    this.filter.set("ID", filter)
+    this.applyFilter()
+  }
+
   onNameFilterChange(filter: string){
-    items = this.products.query({name: filter});
-    this.getPage(1);
+    this.filter.set("NAME", filter)
+    this.applyFilter()
   }
  
+  applyFilter(){
+    items = this.products.query({
+      id: this.filter.get("ID"),
+      name: this.filter.get("NAME")
+    });
+    this.getPage(1);
+  }
+
   getPage(page: number) {
     this.loading = true;
     this.currentItems = serverCall(page).pipe(
@@ -52,7 +66,7 @@ export class CatalogPage {
         }),
         map(res => res.items)
     );
-}
+  }
 
   /**
    * Navigate to the detail page for this item.
