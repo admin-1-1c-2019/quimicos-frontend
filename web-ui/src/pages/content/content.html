@@ -7,24 +7,28 @@
 </ion-header>
 
 <ion-content padding>
-  <h1>Bienvenido a <strong>G5</strong></h1>
-  <h2 padding-top>A qué sección quiere acceder?</h2>
-  <div padding>
-    <h4><u class="blue-link" (click)="goToProductsPage()">Catálogo de productos</u></h4>
-  </div>
-  <div *ngIf="admin" padding>
-    <h4><u class="blue-link" (click)="turnUserToAdmin()">Convertir cliente a administrador</u></h4>
-  </div>
-  <div padding>
-    <h4><u class="blue-link" (click)="goToCompanyPage()">Información de la empresa</u></h4>
-  </div>
-  <div padding>
-    <h4><u class="blue-link" (click)="goToContactPage()">Contacto</u></h4>
-  </div>
-  <div padding>
-    <h4><u class="blue-link" (click)="goToHelpPage()">Ayuda</u></h4>
-  </div>
-  <div padding>
-    <h4><u class="blue-link" (click)="logout()">Cerrar sesión</u></h4>
-  </div>
+
+  <h1 class="title">Bienvenido a G5T</h1>
+  <h2 padding-top>¿A qué sección quiere acceder?</h2>
+
+  <ion-list>
+    <ion-item color="primary">
+      <ion-label (click)="goToProductsPage()">Catálogo de productos</ion-label>
+    </ion-item>
+    <ion-item color="secondary">
+      <ion-label (click)="turnUserToAdmin()">Convertir cliente a administrador</ion-label>
+    </ion-item>
+    <ion-item color="dark">
+      <ion-label (click)="goToCompanyPage()">Información de la empresa</ion-label>
+    </ion-item>
+    <ion-item color="light">
+      <ion-label (click)="goToContactPage()">Contacto</ion-label>
+    </ion-item>
+    <ion-item color="primary">
+      <ion-label (click)="goToHelpPage()">Ayuda</ion-label>
+    </ion-item>
+    <ion-item color="secondary">
+      <ion-label (click)="goToHelpPage()">Cerrar sesión</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
