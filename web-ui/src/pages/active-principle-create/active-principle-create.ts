@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Camera } from '@ionic-native/camera';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
 @IonicPage()
@@ -17,7 +16,7 @@ export class ActivePrincipleCreatePage {
 
   form: FormGroup;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder) {
     this.form = formBuilder.group({
       images: [[]],
       name: ['', Validators.required],
@@ -42,7 +41,7 @@ export class ActivePrincipleCreatePage {
   }
 
   /**
-   * The user is done and wants to create the item, so return it
+   * The user is done and wants to create the active principle, so return it
    * back to the presenter.
    */
   done() {

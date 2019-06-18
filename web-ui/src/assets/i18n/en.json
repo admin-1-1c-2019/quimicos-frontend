@@ -42,10 +42,16 @@
   "PRODUCT_LIST_TITLE": "Products",
   "ACTIVE_PRINCIPLE_LIST_TITLE": "Active principles",
 
-  "ITEM_CREATE_TITLE": "New Item",
+  "PRODUCT_CREATE_TITLE": "New Product",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
-  "ITEM_NAME_PLACEHOLDER": "Name",
-  "ITEM_ABOUT_PLACEHOLDER": "About",
+  "PRODUCT_NAME_PLACEHOLDER": "Name",
+  "PRODUCT_DESC_PLACEHOLDER": "Description",
+  "PRODUCT_IMAGE1_PLACEHOLDER": "Image 1 (url, required)",
+  "PRODUCT_IMAGE2_PLACEHOLDER": "Image 2 (url, optional)",
+  "PRODUCT_IMAGE3_PLACEHOLDER": "Image 3 (url, optional)",
+  "PRODUCT_SIZE_PLACEHOLDER": "Size",
+
+  "ACTIVE_PRINCIPLE": "A. Principle",
 
   "ACTIVE_PRINCIPLE_CREATE_TITLE": "New Active Principle",
   "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Name",

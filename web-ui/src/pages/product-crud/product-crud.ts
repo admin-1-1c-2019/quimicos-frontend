@@ -49,24 +49,26 @@ export class ProductCrudPage {
   }
 
   /**
-   * Prompt the user to add a new item. This shows our ItemCreatePage in a
-   * modal and then adds the new item to our data source if the user created one.
+   * Prompt the user to add a new product. This shows our ItemCreatePage in a
+   * modal and then adds the new product to our data source if the user created one.
    */
-  addItem() {
+  addProduct() {
     let addModal = this.modalCtrl.create('ProductCreatePage');
-    addModal.onDidDismiss(item => {
-      if (item) {
-        this.products.add(item);
+    addModal.onDidDismiss(product => {
+      if (product) {
+        product.images = [product.image1, product.image2, product.image3].filter(i => i != '');
+        product.size = product.size as number;
+        this.products.add(product);
       }
     })
     addModal.present();
   }
 
   /**
-   * Delete an item from the list of products.
+   * Delete a product from the list of products.
    */
-  deleteItem(item) {
-    this.products.delete(item);
+  deleteProduct(product) {
+    this.products.delete(product);
   }
 
   /**
