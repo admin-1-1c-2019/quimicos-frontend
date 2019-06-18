@@ -34,6 +34,12 @@
 
   "ITEM_CREATE_TITLE": "Nuevo Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+  "ITEM_NAME_PLACEHOLDER": "Nombre",
+  "ITEM_ABOUT_PLACEHOLDER": "Acerca de",
+
+  "ACTIVE_PRINCIPLE_CREATE_TITLE": "Nuevo Principio Activo",
+  "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Nombre",
+  "ACTIVE_PRINCIPLE_DESC_PLACEHOLDER": "Descripción",
 
   "CARDS_TITLE": "Social",
 

@@ -96,6 +96,7 @@ export class ActivePrinciples {
   }
 
   add(activePrinciple: ActivePrinciple) {
+    activePrinciple.id = this.activePrinciples.length;
     this.activePrinciples.push(activePrinciple);
   }
 
