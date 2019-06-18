@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
+import { IonicPage, ModalController, NavController, AlertController } from 'ionic-angular';
 
 import { ActivePrinciple } from '../../models/active-principle';
 import { ActivePrinciples } from '../../providers';
@@ -7,6 +7,8 @@ import { ActivePrinciples } from '../../providers';
 import {Observable} from 'rxjs';
 import { delay, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
+import { Products } from '../../providers';
+import { TranslateService } from '@ngx-translate/core';
 
 var mockActivePrinciples;
 interface IServerResponse {
@@ -25,7 +27,8 @@ export class ActivePrincipleCrudPage {
   p: number = 1;
   total: number;
 
-  constructor(public navCtrl: NavController, public activePrinciples: ActivePrinciples, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public activePrinciples: ActivePrinciples, public products: Products,
+              public modalCtrl: ModalController, public alertCtrl: AlertController, public translate: TranslateService) {
     mockActivePrinciples = this.activePrinciples.query();
     this.getPage(1);
   }
@@ -64,8 +67,18 @@ export class ActivePrincipleCrudPage {
 
   /**
    * Delete an active principle from the list of active principles.
+   * If at least one product references it, do not allow deletion.
    */
   deleteActivePrinciple(activePrinciple) {
+    if( this.products.query({activePrincipleId: activePrinciple.id}).length > 0 ){
+      let errorMsg = this.alertCtrl.create({
+        title: this.translate.instant('ERROR'),
+        message: this.translate.instant('CANNOT_DELETE_AP_MSG'),
+        buttons: ['OK']
+      });
+      errorMsg.present();
+      return;
+    }
     this.activePrinciples.delete(activePrinciple);
     this.getPage(1);
   }

@@ -77,5 +77,8 @@
   "PRODUCT_APID": "Active p. ID",
 
   "ACTIVE_PRINCIPLE_ID": "Active Principle ID",
-  "ACTIVE_PRINCIPLE_DESC": "Description"
+  "ACTIVE_PRINCIPLE_DESC": "Description",
+
+  "ERROR": "Error",
+  "CANNOT_DELETE_AP_MSG": "Cannot delete active principle if referenced by existing products"
 }

@@ -63,5 +63,8 @@
   "PRODUCT_APID": "ID p. activo",
 
   "ACTIVE_PRINCIPLE_ID": "ID del principio activo",
-  "ACTIVE_PRINCIPLE_DESC": "Descripción"
+  "ACTIVE_PRINCIPLE_DESC": "Descripción",
+
+  "ERROR": "Error",
+  "CANNOT_DELETE_AP_MSG": "No es posible eliminar un principio activo si está referenciado por productos existentes"
 }
