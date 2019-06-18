@@ -69,6 +69,7 @@ export class ProductCrudPage {
    */
   deleteProduct(product) {
     this.products.delete(product);
+    this.getPage(1);
   }
 
   /**

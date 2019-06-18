@@ -65,8 +65,9 @@ export class ActivePrincipleCrudPage {
   /**
    * Delete an active principle from the list of active principles.
    */
-  deleteItem(activePrinciple) {
+  deleteActivePrinciple(activePrinciple) {
     this.activePrinciples.delete(activePrinciple);
+    this.getPage(1);
   }
 
   /**
