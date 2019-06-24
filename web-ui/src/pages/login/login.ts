@@ -15,8 +15,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string} = {
-    email: 'zz@zz.zz',
-    password: 'aaaaaaaa',
+    email: '',
+    password: '',
   };
 
   constructor(public navCtrl: NavController,
