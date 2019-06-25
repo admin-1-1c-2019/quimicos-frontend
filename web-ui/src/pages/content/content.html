@@ -15,7 +15,7 @@
     <ion-item color="primary">
       <ion-label (click)="goToProductsPage()">Catálogo de productos</ion-label>
     </ion-item>
-    <ion-item color="secondary">
+    <ion-item color="secondary" *ngIf="admin">
       <ion-label (click)="turnUserToAdmin()">Convertir cliente a administrador</ion-label>
     </ion-item>
     <ion-item color="dark">
