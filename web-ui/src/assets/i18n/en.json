@@ -54,12 +54,14 @@
   "ACTIVE_PRINCIPLE": "A. Principle",
 
   "ACTIVE_PRINCIPLE_CREATE_TITLE": "New Active Principle",
+  "ACTIVE_PRINCIPLE_UPDATE_TITLE": "Update Active Principle",
   "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Name",
   "ACTIVE_PRINCIPLE_DESC_PLACEHOLDER": "Description",
 
   "DONE_BUTTON": "Done",
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
+  "UPDATE_BUTTON": "Update",
 
   "CARDS_TITLE": "Social",
 

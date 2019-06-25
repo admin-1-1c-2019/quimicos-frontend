@@ -1,7 +1,10 @@
 {
+  "BACK_BUTTON_TEXT": "Atrás",
+
   "NAME": "Nombre",
-  "PASSWORD": "Contraseña",
   "EMAIL": "Email",
+  "USERNAME": "Usuario",
+  "PASSWORD": "Contraseña",
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
 
@@ -11,6 +14,9 @@
 
   "MAP_TITLE": "Mapa",
 
+  "TUTORIAL_SKIP_BUTTON": "Saltear",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
+
   "TUTORIAL_SLIDE1_TITLE": "Bienvenido/a al Ionic Super Starter",
   "TUTORIAL_SLIDE1_DESCRIPTION": "El <b>Ionic Super Starter</b> es un starter de Ionic completo con muchas páginas preconstruidas y mejores prácticas.",
 
@@ -19,6 +25,10 @@
 
   "TUTORIAL_SLIDE3_TITLE": "Empezando",
   "TUTORIAL_SLIDE3_DESCRIPTION": "¿Necesitas ayuda? Échale un vistazo al README del Super Starter para ver el tutorial completo.",
+
+  "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
+
+  "WELCOME_INTRO": "El punto de partida para tu próxima y genial app Ionic",
 
   "WELCOME_TITLE": "Bienvenido/a",
 
@@ -44,8 +54,14 @@
   "ACTIVE_PRINCIPLE": "P. Activo",
 
   "ACTIVE_PRINCIPLE_CREATE_TITLE": "Nuevo Principio Activo",
+  "ACTIVE_PRINCIPLE_UPDATE_TITLE": "Modificar Principio Activo",
   "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Nombre",
   "ACTIVE_PRINCIPLE_DESC_PLACEHOLDER": "Descripción",
+
+  "DONE_BUTTON": "Listo",
+  "CANCEL_BUTTON": "Cancelar",
+  "DELETE_BUTTON": "Eliminar",
+  "UPDATE_BUTTON": "Modificar",
 
   "CARDS_TITLE": "Social",
 

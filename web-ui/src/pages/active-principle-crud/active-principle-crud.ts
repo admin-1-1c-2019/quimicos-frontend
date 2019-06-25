@@ -84,6 +84,20 @@ export class ActivePrincipleCrudPage {
   }
 
   /**
+   * Open a form for modifying fields in an active principle, from the list of active principles.
+   */
+  updateActivePrinciple(activePrinciple) {
+    let updateModal = this.modalCtrl.create('ActivePrincipleUpdatePage', activePrinciple);
+    updateModal.onDidDismiss(activePrinciple => {
+      if (activePrinciple) {
+        this.activePrinciples.update(activePrinciple);
+      }
+    })
+    updateModal.present();
+    this.getPage(this.p);
+  }
+
+  /**
    * Navigate to the detail page for this active principle.
    */
   openActivePrinciple(activePrinciple: ActivePrinciple) {

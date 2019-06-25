@@ -100,7 +100,15 @@ export class ActivePrinciples {
     this.activePrinciples.push(activePrinciple);
   }
 
-  delete(activePrinciples: ActivePrinciple) {
-    this.activePrinciples.splice(this.activePrinciples.indexOf(activePrinciples), 1);
+  delete(activePrinciple: ActivePrinciple) {
+    this.activePrinciples.splice(this.activePrinciples.indexOf(activePrinciple), 1);
+  }
+
+  update(activePrinciple: ActivePrinciple) {
+    let index = this.activePrinciples.findIndex(a => a.id == activePrinciple.id);
+    if (index >= 0) {
+      this.activePrinciples[index].name = activePrinciple.name
+      this.activePrinciples[index].description = activePrinciple.description
+    } 
   }
 }

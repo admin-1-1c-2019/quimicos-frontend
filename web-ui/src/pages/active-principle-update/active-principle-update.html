@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ACTIVE_PRINCIPLE_UPDATE_TITLE' | translate }}</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+          {{ 'CANCEL_BUTTON' | translate }}
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>
+        <span color="primary" showWhen="ios">
+          {{ 'DONE_BUTTON' | translate }}
+        </span>
+        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="updateActivePrinciple()">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" formControlName="id" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'ACTIVE_PRINCIPLE_NAME_PLACEHOLDER' | translate }}" formControlName="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="{{ 'ACTIVE_PRINCIPLE_DESC_PLACEHOLDER' | translate }}" formControlName="description" required></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
