@@ -73,6 +73,22 @@ export class ProductCrudPage {
   }
 
   /**
+   * Open a form for modifying fields in a product, from the list of products.
+   */
+  updateProduct(product) {
+    let updateModal = this.modalCtrl.create('ProductUpdatePage', product);
+    updateModal.onDidDismiss(product => {
+      if (product) {
+        product.images = [product.image1, product.image2, product.image3].filter(i => i != '');
+        product.size = product.size as number;
+        this.products.update(product);
+      }
+    })
+    updateModal.present();
+    this.getPage(this.p);
+  }
+
+  /**
    * Navigate to the detail page for this product.
    */
   openProduct(product: Product) {

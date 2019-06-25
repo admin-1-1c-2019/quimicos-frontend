@@ -1,36 +1,38 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angular';
 
 import { ActivePrinciples } from '../../providers';
 import { ActivePrinciple } from '../../models/active-principle';
 
 @IonicPage()
 @Component({
-  selector: 'page-product-create',
-  templateUrl: 'product-create.html'
+  selector: 'page-product-update',
+  templateUrl: 'product-update.html'
 })
-export class ProductCreatePage {
+export class ProductUpdatePage {
   @ViewChild('fileInput') fileInput;
 
   isReadyToSave: boolean;
 
-  product: any;
+  item: any;
 
   form: FormGroup;
 
   activePrinciples: ActivePrinciple[];
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder,
-              public activePrinciplesProvider: ActivePrinciples) {
+              public activePrinciplesProvider: ActivePrinciples, params: NavParams) {
     this.form = formBuilder.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      image1: ['', Validators.required],
-      image2: [''],
-      image3: [''],
-      size: [null, Validators.required],
-      activePrincipleId: [0, Validators.required]
+      id: [params.get('id')],
+      images: [[]],
+      image1: [params.get('images')[0]],
+      image2: [params.get('images').length > 1? params.get('images')[1] : null],
+      image3: [params.get('images').length > 2? params.get('images')[2] : null],
+      name: [params.get('name'), Validators.required],
+      description: [params.get('description')],
+      size: [params.get('size')],
+      activePrincipleId: [params.get('activePrincipleId')],
     });
 
     // Watch the form for changes, and
@@ -52,14 +54,11 @@ export class ProductCreatePage {
   }
 
   /**
-   * The user is done and wants to create the product, so return it
+   * The user is done and wants to update the active principle, so return it
    * back to the presenter.
    */
   done() {
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
-  }
-
-  onActivePrincipleChange(){
   }
 }

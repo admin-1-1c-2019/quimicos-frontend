@@ -10,7 +10,6 @@ import { of } from 'rxjs/observable/of';
 
 // TODO Spruce up UI
 // TODO Use terms outside search
-// TODO Products U
 // TODO Show active principle details when clicking in its id in product details
 // TODO Grab products from backend instead of mock
 // TODO Fix security vulnerabilities

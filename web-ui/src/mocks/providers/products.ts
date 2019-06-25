@@ -135,4 +135,15 @@ export class Products {
   delete(product: Product) {
     this.products.splice(this.products.indexOf(product), 1);
   }
+
+  update(product: Product) {
+    let index = this.products.findIndex(p => p.id == product.id);
+    if (index >= 0) {
+      this.products[index].name = product.name;
+      this.products[index].description = product.description;
+      this.products[index].images = product.images;
+      this.products[index].size = product.size;
+      this.products[index].activePrincipleId = product.activePrincipleId;
+    } 
+  }
 }
