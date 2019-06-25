@@ -42,7 +42,7 @@ export class PasswordRecoveryPage {
     if (this.account.new_password === this.account.new_password_repeat) {
       this.api.put("users/recover_password", postData, {headers: headers, responseType: 'text/html'})
         .subscribe(data => {
-          this.navCtrl.push('MenuPage');
+          this.navCtrl.push('LoginPage');
         }, error => {
           document.querySelector(".error-message").innerHTML = error.error.message;
           document.querySelector(".error-message").removeAttribute("hidden");
