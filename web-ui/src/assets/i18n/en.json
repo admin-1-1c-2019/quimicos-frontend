@@ -8,9 +8,9 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAB1_TITLE": "Products",
+  "TAB2_TITLE": "Active Principles",
+  "TAB3_TITLE": "Search",
 
   "MAP_TITLE": "Map",
 
@@ -30,16 +30,6 @@
 
   "WELCOME_INTRO": "The starting point for your next great Ionic app",
 
-  "SETTINGS_TITLE": "Settings",
-  "SETTINGS_OPTION1": "Option 1",
-  "SETTINGS_OPTION2": "Option 2",
-  "SETTINGS_OPTION3": "Option 3",
-  "SETTINGS_OPTION4": "Option 4",
-
-  "SETTINGS_PROFILE_BUTTON": "Edit Profile",
-
-  "SETTINGS_PAGE_PROFILE": "Edit Profile",
-
   "WELCOME_TITLE": "Welcome",
 
   "LOGIN_TITLE": "Sign in",
@@ -49,20 +39,49 @@
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
 
-  "LIST_MASTER_TITLE": "Items",
+  "PRODUCT_LIST_TITLE": "Products",
+  "ACTIVE_PRINCIPLE_LIST_TITLE": "Active principles",
 
-  "ITEM_CREATE_TITLE": "New Item",
+  "PRODUCT_CREATE_TITLE": "New Product",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
+  "PRODUCT_NAME_PLACEHOLDER": "Name",
+  "PRODUCT_DESC_PLACEHOLDER": "Description",
+  "PRODUCT_IMAGE1_PLACEHOLDER": "Image 1 (url, required)",
+  "PRODUCT_IMAGE2_PLACEHOLDER": "Image 2 (url, optional)",
+  "PRODUCT_IMAGE3_PLACEHOLDER": "Image 3 (url, optional)",
+  "PRODUCT_SIZE_PLACEHOLDER": "Size",
 
-  "ITEM_NAME_PLACEHOLDER": "Name",
-  "ITEM_ABOUT_PLACEHOLDER": "About",
+  "ACTIVE_PRINCIPLE": "A. Principle",
+
+  "ACTIVE_PRINCIPLE_CREATE_TITLE": "New Active Principle",
+  "ACTIVE_PRINCIPLE_UPDATE_TITLE": "Update Active Principle",
+  "PRODUCT_UPDATE_TITLE": "Update Product",
+  "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Name",
+  "ACTIVE_PRINCIPLE_DESC_PLACEHOLDER": "Description",
 
   "DONE_BUTTON": "Done",
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
+  "UPDATE_BUTTON": "Update",
 
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+  "SEARCH_BY_NAME_PLACEHOLDER": "Search the product list by name, e.g. \"Aspirin\"",
+  "SEARCH_BY_ID_PLACEHOLDER": "Search the product list by id, e.g. \"1\"",
+  "SEARCH_BY_DESC_PLACEHOLDER": "Search the product list by description, e.g. \"Sedative\"",
+  "SEARCH_BY_SIZE_PLACEHOLDER": "Search the product list by size, e.g. 150",
+  "SEARCH_BY_APID_PLACEHOLDER": "Search the product list by active principle id, e.g. 1",
+
+  "PRODUCT_ID": "Product ID",
+  "PRODUCT_NAME": "Name",
+  "PRODUCT_DESC": "Description",
+  "PRODUCT_SIZE": "Size",
+  "PRODUCT_APID": "Active p. ID",
+
+  "ACTIVE_PRINCIPLE_ID": "Active Principle ID",
+  "ACTIVE_PRINCIPLE_DESC": "Description",
+
+  "ERROR": "Error",
+  "CANNOT_DELETE_AP_MSG": "Cannot delete active principle if referenced by existing products"
 }

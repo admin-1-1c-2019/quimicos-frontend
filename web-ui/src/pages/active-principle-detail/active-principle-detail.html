@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ activePrinciple.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="active-principle-detail" padding>
+    <h2>{{activePrinciple.name}}</h2>
+    <p>{{'ACTIVE_PRINCIPLE_ID' | translate}} : {{activePrinciple.id}}</p>
+    <p>{{'ACTIVE_PRINCIPLE_DESC' | translate}} : {{activePrinciple.description}}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1 class="sb-label-col">
+        <ion-label>{{'PRODUCT_ID' | translate}}</ion-label>
+      </ion-col>
+      <ion-col col-11>
+          <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.ID, $event.value)' 
+           placeholder="{{ 'SEARCH_BY_ID_PLACEHOLDER' | translate }}"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-1 col-1 class="sb-label-col">
+          <ion-label>{{'PRODUCT_NAME' | translate}}</ion-label>
+        </ion-col>
+        <ion-col col-11>
+            <ion-searchbar type="text" (ionChange)='onFilterChange(Catalog.NAME, $event.value)'
+             placeholder="{{ 'SEARCH_BY_NAME_PLACEHOLDER' | translate }}"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-1 col-1 class="sb-label-col">
+          <ion-label>{{'PRODUCT_DESC' | translate}}</ion-label>
+        </ion-col>
+        <ion-col col-11>
+          <ion-searchbar type="text" (ionChange)='onFilterChange(Catalog.DESC, $event.value)'
+           placeholder="{{ 'SEARCH_BY_DESC_PLACEHOLDER' | translate }}"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-1 col-1 class="sb-label-col">
+          <ion-label>{{'PRODUCT_SIZE' | translate}}</ion-label>
+        </ion-col>
+        <ion-col col-11>
+          <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.SIZE, $event.value)' 
+           placeholder="{{ 'SEARCH_BY_SIZE_PLACEHOLDER' | translate }}"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-1 col-1 class="sb-label-col">
+          <ion-label>{{'PRODUCT_APID' | translate}}</ion-label>
+        </ion-col>
+        <ion-col col-11>
+          <ion-searchbar type="number" (ionChange)='onFilterChange(Catalog.APID, $event.value)'
+           placeholder="{{ 'SEARCH_BY_APID_PLACEHOLDER' | translate }}"></ion-searchbar>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+  <ion-list>
+    <button ion-item (click)="openProduct(product)" *ngFor="let product of currentProducts | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+      <ion-avatar item-start>
+        <img [src]="product.images[0]" />
+      </ion-avatar>
+      <h2>{{product.name}}</h2>
+      <p>{{product.description}}</p>
+    </button>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-spinner *ngIf="loading"></ion-spinner>
+    </ion-row>
+    <ion-row justify-content-center align-items-center>
+      <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+    </ion-row>
+  </ion-grid>
+</ion-content>

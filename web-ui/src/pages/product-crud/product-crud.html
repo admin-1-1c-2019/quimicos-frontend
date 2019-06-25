@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'PRODUCT_LIST_TITLE' | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addProduct()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of currentProducts | async | paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }">
+      <button ion-item (click)="openProduct(product)">
+        <ion-avatar item-start>
+          <img [src]="product.images[0]" />
+        </ion-avatar>
+        <h2>{{product.name}}</h2>
+        <p>{{product.description}}</p>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteProduct(product)">
+          {{ 'DELETE_BUTTON' | translate }}
+        </button>
+        <button ion-button color="warning" (click)="updateProduct(product)">
+            {{ 'UPDATE_BUTTON' | translate }}
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-spinner *ngIf="loading"></ion-spinner>
+    </ion-row>
+    <ion-row justify-content-center align-items-center>
+      <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+    </ion-row>
+  </ion-grid>
+</ion-content>

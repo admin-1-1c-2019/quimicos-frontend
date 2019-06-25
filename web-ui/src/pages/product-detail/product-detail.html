@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ product.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="product-profile" text-center #images[0] [style.background-image]="'url(' + product.images[0] + ')'">
+  </div>
+
+  <div class="product-detail" padding>
+    <h2>{{product.name}}</h2>
+    <p>{{'PRODUCT_ID' | translate}} : {{product.id}}</p>
+    <p>{{'PRODUCT_DESC' | translate}} : {{product.description}}</p>
+    <p>{{'PRODUCT_SIZE' | translate}} : {{product.size}} ml</p>
+    <p>{{'PRODUCT_APID' | translate}} : {{product.activePrincipleId}}</p>
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let img of product.images">
+          <img [src]="img">
+        </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

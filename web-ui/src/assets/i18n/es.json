@@ -1,15 +1,21 @@
 {
+  "BACK_BUTTON_TEXT": "Atrás",
+
   "NAME": "Nombre",
-  "PASSWORD": "Contraseña",
   "EMAIL": "Email",
+  "USERNAME": "Usuario",
+  "PASSWORD": "Contraseña",
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Buscar",
-  "TAB3_TITLE": "Ajustes",
+  "TAB1_TITLE": "Productos",
+  "TAB2_TITLE": "Principios Activos",
+  "TAB3_TITLE": "Buscar",
 
   "MAP_TITLE": "Mapa",
+
+  "TUTORIAL_SKIP_BUTTON": "Saltear",
+  "TUTORIAL_CONTINUE_BUTTON": "Continuar",
 
   "TUTORIAL_SLIDE1_TITLE": "Bienvenido/a al Ionic Super Starter",
   "TUTORIAL_SLIDE1_DESCRIPTION": "El <b>Ionic Super Starter</b> es un starter de Ionic completo con muchas páginas preconstruidas y mejores prácticas.",
@@ -20,13 +26,9 @@
   "TUTORIAL_SLIDE3_TITLE": "Empezando",
   "TUTORIAL_SLIDE3_DESCRIPTION": "¿Necesitas ayuda? Échale un vistazo al README del Super Starter para ver el tutorial completo.",
 
-  "SETTINGS_TITLE": "Ajustes",
-  "SETTINGS_OPTION1": "Opción 1",
-  "SETTINGS_OPTION2": "Opción 2",
-  "SETTINGS_OPTION3": "Opción 3",
-  "SETTINGS_OPTION4": "Opción 4",
+  "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
 
-  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+  "WELCOME_INTRO": "El punto de partida para tu próxima y genial app Ionic",
 
   "WELCOME_TITLE": "Bienvenido/a",
 
@@ -37,12 +39,49 @@
   "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
   "SIGNUP_BUTTON": "Registrarse",
 
-  "LIST_MASTER_TITLE": "Items",
+  "PRODUCT_LIST_TITLE": "Productos",
+  "ACTIVE_PRINCIPLE_LIST_TITLE": "Principios activos",
 
-  "ITEM_CREATE_TITLE": "Nuevo Item",
+  "PRODUCT_CREATE_TITLE": "Nuevo Producto",
   "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+  "PRODUCT_NAME_PLACEHOLDER": "Nombre",
+  "PRODUCT_DESC_PLACEHOLDER": "Descripción",
+  "PRODUCT_IMAGE1_PLACEHOLDER": "Imagen 1 (url, requerida)",
+  "PRODUCT_IMAGE2_PLACEHOLDER": "Imagen 2 (url, opcional)",
+  "PRODUCT_IMAGE3_PLACEHOLDER": "Imagen 3 (url, opcional)",
+  "PRODUCT_SIZE_PLACEHOLDER": "Tamaño",
+
+  "ACTIVE_PRINCIPLE": "P. Activo",
+
+  "ACTIVE_PRINCIPLE_CREATE_TITLE": "Nuevo Principio Activo",
+  "ACTIVE_PRINCIPLE_UPDATE_TITLE": "Modificar Principio Activo",
+  "PRODUCT_UPDATE_TITLE": "Modificar Producto",
+  "ACTIVE_PRINCIPLE_NAME_PLACEHOLDER": "Nombre",
+  "ACTIVE_PRINCIPLE_DESC_PLACEHOLDER": "Descripción",
+
+  "DONE_BUTTON": "Listo",
+  "CANCEL_BUTTON": "Cancelar",
+  "DELETE_BUTTON": "Eliminar",
+  "UPDATE_BUTTON": "Modificar",
 
   "CARDS_TITLE": "Social",
 
-  "SEARCH_TITLE": "Buscar"
+  "SEARCH_TITLE": "Buscar",
+  "SEARCH_BY_NAME_PLACEHOLDER": "Buscar en el catálogo por nombre, ej: \"Aspirina\"",
+  "SEARCH_BY_ID_PLACEHOLDER": "Buscar en el catálogo por id, e.g. 1",
+  "SEARCH_BY_DESC_PLACEHOLDER": "Buscar en el catálogo por descripción, ej: \"Sedante\"",
+  "SEARCH_BY_SIZE_PLACEHOLDER": "Buscar en el catálogo por tamaño, ej: 150",
+  "SEARCH_BY_APID_PLACEHOLDER": "Buscar en el catálogo por id de principio activo, ej: 1",
+
+  "PRODUCT_ID": "ID Producto",
+  "PRODUCT_NAME": "Nombre",
+  "PRODUCT_DESC": "Descripción",
+  "PRODUCT_SIZE": "Tamaño",
+  "PRODUCT_APID": "ID p. activo",
+
+  "ACTIVE_PRINCIPLE_ID": "ID del principio activo",
+  "ACTIVE_PRINCIPLE_DESC": "Descripción",
+
+  "ERROR": "Error",
+  "CANNOT_DELETE_AP_MSG": "No es posible eliminar un principio activo si está referenciado por productos existentes"
 }

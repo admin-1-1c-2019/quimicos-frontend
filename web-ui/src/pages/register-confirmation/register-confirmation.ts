@@ -38,7 +38,7 @@ export class RegisterConfirmationPage {
 
     this.api.put("users", postData, {headers: headers, responseType: 'text/html'})
       .subscribe(data => {
-        this.navCtrl.push('ContentPage');
+        this.navCtrl.push('LoginPage');
       }, error => {
         console.log(error);
       });
