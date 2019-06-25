@@ -13,6 +13,7 @@ import { of } from 'rxjs/observable/of';
 // TODO Show active principle details when clicking in its id in product details
 // TODO Grab products from backend instead of mock
 // TODO Fix security vulnerabilities
+// TODO Do not hardcode size values
 
 var mockProducts;
 
