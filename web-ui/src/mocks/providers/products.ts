@@ -55,7 +55,7 @@ export class Products {
         "name": "Heroin",
         "description": "Luca not dead",
         "images": ["assets/img/products/heroin.jpg"],
-        "size": 350,
+        "size": 70,
         "activePrincipleId": 6
       },
       {
@@ -95,7 +95,7 @@ export class Products {
         "name": "Ayahuasca",
         "description": "Don't give this to Rolando Graña",
         "images": ["assets/img/products/ayahuasca.jpg"],
-        "size": 20,
+        "size": 70,
         "activePrincipleId": 9
       }
     ];
@@ -129,6 +129,7 @@ export class Products {
   }
 
   add(product: Product) {
+    product.id = this.products.length + 1;
     this.products.push(product);
   }
 

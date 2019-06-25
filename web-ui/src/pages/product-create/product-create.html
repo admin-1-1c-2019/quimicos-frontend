@@ -42,7 +42,13 @@
         <ion-input type="url" placeholder="{{ 'PRODUCT_IMAGE3_PLACEHOLDER' | translate }}" formControlName="image3"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="number" placeholder="{{ 'PRODUCT_SIZE_PLACEHOLDER' | translate }}" formControlName="size" required></ion-input>
+          <ion-label>{{ 'PRODUCT_SIZE' | translate }}</ion-label>
+          <ion-select formControlName="size" required>
+            <ion-option value="70">70 ml</ion-option>
+            <ion-option value="100">100 ml</ion-option>
+            <ion-option value="150">150 ml</ion-option>
+            <ion-option value="250">250 ml</ion-option>
+          </ion-select>
       </ion-item>
       <ion-item>
         <ion-label>{{ 'ACTIVE_PRINCIPLE' | translate }}</ion-label>
